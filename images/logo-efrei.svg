@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 52" width="160" height="52" fill="none">
+  <!-- Dôme du Panthéon simplifié mais reconnaissable -->
+  <!-- Lanterne au sommet -->
+  <rect x="22" y="3" width="4" height="6" rx="1" fill="white"/>
+  <!-- Tambour du dôme -->
+  <rect x="18" y="9" width="12" height="4" rx="0.5" fill="white"/>
+  <!-- Dôme principal (ellipse aplatie en haut) -->
+  <ellipse cx="24" cy="17" rx="13" ry="7" fill="white"/>
+  <!-- Corps cylindrique sous le dôme -->
+  <rect x="13" y="17" width="22" height="6" fill="white"/>
+  <!-- Colonnes (5 colonnes) -->
+  <rect x="13" y="23" width="2.5" height="9" fill="white"/>
+  <rect x="17.5" y="23" width="2.5" height="9" fill="white"/>
+  <rect x="22" y="23" width="2.5" height="9" fill="white"/>
+  <rect x="26.5" y="23" width="2.5" height="9" fill="white"/>
+  <rect x="31" y="23" width="2.5" height="9" fill="white"/>
+  <!-- Entablement entre colonnes et base -->
+  <rect x="11" y="32" width="26" height="2.5" fill="white"/>
+  <!-- Marches / base (3 degrés) -->
+  <rect x="10" y="34.5" width="28" height="2.5" fill="white"/>
+  <rect x="8"  y="37"   width="32" height="2.5" fill="white"/>
+  <rect x="6"  y="39.5" width="36" height="2.5" fill="white"/>
+
+  <!-- Texte "efrei" -->
+  <text x="48" y="30" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="22" fill="white" letter-spacing="1">efrei</text>
+
+  <!-- Sous-texte "PARIS PANTHÉON-ASSAS UNIVERSITÉ" -->
+  <text x="48" y="40" font-family="Arial, sans-serif" font-weight="400" font-size="6.2" fill="white" letter-spacing="0.6">PARIS PANTHÉON-ASSAS UNIVERSITÉ</text>
+
+  <!-- Sous-texte "Villejuif" en italique très petit -->
+  <text x="48" y="48" font-family="Arial, sans-serif" font-style="italic" font-weight="300" font-size="5.5" fill="white" letter-spacing="0.3" opacity="0.85">Villejuif</text>
+</svg>
