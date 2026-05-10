@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maquette - Département Informatique EFREI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .mockup-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== HEADER ===== */
+    .mockup-header {
+      background: linear-gradient(135deg, #0A316C 0%, #1552a8 100%);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mockup-logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .mockup-nav {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .mockup-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .mockup-hero {
+      background: linear-gradient(135deg, #0A316C 0%, #1552a8 50%, #81ECEC 100%);
+      color: white;
+      padding: 60px 40px;
+      text-align: left;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .mockup-hero-left h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .mockup-hero-left p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .mockup-hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .mockup-btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .mockup-btn-primary {
+      background: #FDCB6E;
+      color: #0A316C;
+    }
+
+    .mockup-btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .mockup-hero-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .mockup-stat {
+      text-align: center;
+    }
+
+    .mockup-stat-number {
+      display: block;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .mockup-stat-label {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .mockup-hero-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .mockup-tech-card {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 32px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* ===== SECTIONS ===== */
+    .mockup-section {
+      padding: 60px 40px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .mockup-section-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #0A316C;
+    }
+
+    /* ===== STATS GRID ===== */
+    .mockup-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .mockup-stat-card {
+      background: #f0f4fb;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      border-left: 4px solid #81ECEC;
+    }
+
+    .mockup-stat-big {
+      display: block;
+      font-size: 36px;
+      color: #1552a8;
+      margin-bottom: 10px;
+    }
+
+    .mockup-stat-desc {
+      font-size: 14px;
+      color: #7a8eaa;
+    }
+
+    /* ===== CARDS GRID ===== */
+    .mockup-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .mockup-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mockup-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .mockup-card-image {
+      height: 180px;
+      background: linear-gradient(135deg, #81ECEC 0%, #FDCB6E 100%);
+    }
+
+    .mockup-card-content {
+      padding: 20px;
+    }
+
+    .mockup-card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #0A316C;
+    }
+
+    .mockup-card-text {
+      font-size: 14px;
+      color: #7a8eaa;
+      line-height: 1.6;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .mockup-testimonial {
+      background: #f0f4fb;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-left: 4px solid #FDCB6E;
+    }
+
+    .mockup-testimonial-text {
+      font-size: 14px;
+      font-style: italic;
+      margin-bottom: 15px;
+      color: #1a2840;
+    }
+
+    .mockup-testimonial-author {
+      font-size: 12px;
+      font-weight: bold;
+      color: #0A316C;
+    }
+
+    /* ===== FOOTER ===== */
+    .mockup-footer {
+      background: #0A316C;
+      color: white;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .mockup-footer-section h3 {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .mockup-footer-section ul {
+      list-style: none;
+    }
+
+    .mockup-footer-section li {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .mockup-footer-section a {
+      color: #81ECEC;
+      text-decoration: none;
+    }
+
+    .mockup-footer-bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .mockup-hero {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+      }
+
+      .mockup-hero-left h1 {
+        font-size: 24px;
+      }
+
+      .mockup-nav {
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      .mockup-section {
+        padding: 40px 20px;
+      }
+    }
+
+    /* ===== LEGEND ===== */
+    .mockup-legend {
+      background: #fff3cd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border-left: 4px solid #FDCB6E;
+    }
+
+    .mockup-legend h3 {
+      margin-bottom: 10px;
+      color: #0A316C;
+    }
+
+    .mockup-legend ul {
+      list-style: none;
+      font-size: 12px;
+      color: #0A316C;
+    }
+
+    .mockup-legend li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mockup-legend">
+    <h3>📋 Légende de la maquette</h3>
+    <ul>
+      <li><strong>🔵 Bleu (#0A316C)</strong> : Couleur principale académique</li>
+      <li><strong>🔷 Cyan (#81ECEC)</strong> : Couleur d'accentuation moderne</li>
+      <li><strong>🟡 Jaune (#FDCB6E)</strong> : Couleur d'appel à l'action</li>
+      <li><strong>⚙️ Responsive</strong> : Adapté aux mobiles et desktop</li>
+    </ul>
+  </div>
+
+  <div class="mockup-container">
+    <!-- ===== HEADER ===== -->
+    <header class="mockup-header">
+      <div class="mockup-logo">🎓 EFREI Informatique</div>
+      <nav class="mockup-nav">
+        <a href="#">Accueil</a>
+        <a href="#">Formations</a>
+        <a href="#">Équipe</a>
+        <a href="#">Vie Étudiante</a>
+        <a href="#">Partenariats</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="mockup-hero">
+      <div class="mockup-hero-left">
+        <h1>Façonner les ingénieurs du numérique de demain</h1>
+        <p>Département Informatique · EFREI Paris · Villejuif</p>
+        <div class="mockup-hero-buttons">
+          <button class="mockup-btn mockup-btn-primary">Découvrir les formations</button>
+          <button class="mockup-btn mockup-btn-secondary">Nous contacter</button>
+        </div>
+        <div class="mockup-hero-stats">
+          <div class="mockup-stat">
+            <span class="mockup-stat-number">2500+</span>
+            <span class="mockup-stat-label">Étudiants</span>
+          </div>
+          <div class="mockup-stat">
+            <span class="mockup-stat-number">60</span>
+            <span class="mockup-stat-label">Cours</span>
+          </div>
+          <div class="mockup-stat">
+            <span class="mockup-stat-number">200+</span>
+            <span class="mockup-stat-label">Partenaires</span>
+          </div>
+        </div>
+      </div>
+      <div class="mockup-hero-right">
+        <div class="mockup-tech-card">💻<br>Dev</div>
+        <div class="mockup-tech-card">🤖<br>IA</div>
+        <div class="mockup-tech-card">🔒<br>Cybersec</div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION: CHIFFRES CLÉS ===== -->
+    <section class="mockup-section">
+      <h2 class="mockup-section-title">Nos chiffres clés</h2>
+      <div class="mockup-stats-grid">
+        <div class="mockup-stat-card">
+          <strong class="mockup-stat-big">2500+</strong>
+          <p class="mockup-stat-desc">Étudiants formés chaque année</p>
+        </div>
+        <div class="mockup-stat-card">
+          <strong class="mockup-stat-big">60</strong>
+          <p class="mockup-stat-desc">Cours et modules pédagogiques</p>
+        </div>
+        <div class="mockup-stat-card">
+          <strong class="mockup-stat-big">200+</strong>
+          <p class="mockup-stat-desc">Partenaires entreprises</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION: FORMATIONS ===== -->
+    <section class="mockup-section">
+      <h2 class="mockup-section-title">Nos formations</h2>
+      <p style="font-size: 14px; color: #7a8eaa; line-height: 1.8; margin-bottom: 15px;">
+        Le département Informatique d'EFREI Paris propose des formations complètes et modernes couvrant les domaines clés du numérique. 
+        De la licence fondamentale aux diplômes d'ingénieur spécialisés, nos programmes combinent théorie et pratique pour préparer 
+        les étudiants à relever les défis technologiques de demain. Avec des partenariats forts avec l'industrie, nos diplômés 
+        occupent des postes stratégiques dans les plus grandes entreprises de technologie.
+      </p>
+    </section>
+
+    <!-- ===== SECTION: ÉQUIPE ===== -->
+    <section class="mockup-section">
+      <h2 class="mockup-section-title">Notre équipe</h2>
+      <p style="font-size: 14px; color: #7a8eaa; line-height: 1.8; margin-bottom: 15px;">
+        Notre équipe pédagogique est composée de professeurs expérimentés, de chercheurs reconnus et de praticiens issus du secteur privé. 
+        Chacun apporte son expertise et son engagement pour offrir une formation d'excellence. Nos enseignants travaillent étroitement 
+        avec les étudiants pour favoriser l'apprentissage actif et l'innovation. Ils sont également impliqués dans des projets de recherche 
+        de pointe, garantissant que nos programmes restent au cœur des innovations technologiques actuelles.
+      </p>
+    </section>
+
+    <!-- ===== SECTION: VIE ÉTUDIANTE ===== -->
+    <section class="mockup-section">
+      <h2 class="mockup-section-title">Vie étudiante</h2>
+      <p style="font-size: 14px; color: #7a8eaa; line-height: 1.8; margin-bottom: 15px;">
+        La vie étudiante à EFREI est dynamique et enrichissante. Les étudiants peuvent participer à des clubs thématiques, 
+        des hackathons, des conférences avec des experts du secteur et des événements de réseautage. Notre campus offre des installations 
+        modernes incluant des laboratoires informatiques dernier cri, des espaces de travail collaboratif et des ressources pour l'apprentissage. 
+        Les stages en entreprise et les alternances sont des éléments clés de notre pédagogie, permettant aux étudiants d'acquérir une 
+        expérience professionnelle dès leur formation.
+      </p>
+    </section>
+
+    <!-- ===== SECTION: PARTENAIRES ===== -->
+    <section class="mockup-section">
+      <h2 class="mockup-section-title">Nos partenaires</h2>
+      <p style="font-size: 14px; color: #7a8eaa; line-height: 1.8; margin-bottom: 15px;">
+        EFREI Paris collabore avec un réseau impressionnant d'entreprises leaders dans le secteur technologique, d'universités 
+        internationales prestigieuses et de centres de recherche et développement de renommée mondiale. Ces partenariats renforcent 
+        la qualité de notre enseignement, offrent aux étudiants des opportunités de stage et d'emploi, et facilitent l'accès à des 
+        ressources pédagogiques innovantes. Ensemble, nous créons un écosystème favorable à l'excellence académique et à l'insertion professionnelle.
+      </p>
+    </section>
+
+    <!-- ===== SECTION: CONTACT ===== -->
+    <section class="mockup-section">
+      <h2 class="mockup-section-title">Nous contacter</h2>
+      <p style="margin-bottom: 30px; color: #7a8eaa;">Vous avez des questions ? Nous sommes heureux de vous répondre !</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <div>
+          <h3 style="color: #0A316C; margin-bottom: 10px;">Adresse</h3>
+          <p style="font-size: 14px; color: #7a8eaa;">Rue de l'EFREI<br>94250 Gentilly<br>France</p>
+        </div>
+        <div>
+          <h3 style="color: #0A316C; margin-bottom: 10px;">Réseaux Sociaux</h3>
+          <p style="font-size: 14px; color: #7a8eaa;">LinkedIn • Twitter • Facebook • Instagram</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="mockup-footer">
+      <div class="mockup-footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Formations</a></li>
+          <li><a href="#">Équipe</a></li>
+        </ul>
+      </div>
+      <div class="mockup-footer-section">
+        <h3>Ressources</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Carrières</a></li>
+        </ul>
+      </div>
+      <div class="mockup-footer-section">
+        <h3>Légal</h3>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Conditions d'utilisation</a></li>
+        </ul>
+      </div>
+      <div class="mockup-footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:contact@efrei.fr">contact@efrei.fr</a></li>
+          <li>+33 1 XX XX XX XX</li>
+        </ul>
+      </div>
+      <div class="mockup-footer-bottom">
+        © 2024 Département Informatique EFREI Paris · Tous droits réservés
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
